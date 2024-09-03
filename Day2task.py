@@ -27,23 +27,34 @@
 
 #Task 3
 #While Loop
-names = ["Mitchell", "Bobby", "Charlie", "Elliott", "Fianna"]
+names = []
 i = 0
-while i < len(names):
-    print(f"{names[i]} is Awesome!")
+while i < 5:
+    name = input("Enter a name: ")
+    names.append(name)
     i += 1
 
-#For Loop
-names = ["Mitchell", "Bobby", "Charlie", "Elliott", "Fianna"]
 for name in names:
     print(f"{name} is Awesome!")
 
+
+#For Loop
+names = []
+for _ in range(5):
+    name = input("Enter a name: ")
+    names.append(name)
+
+for name in names:
+    print(f"{name} is Awesome!")
+
+
 #List Comprehension
-names = ["Mitchell", "Bobby", "Charlie", "Elliott", "Fianna"]
+names = [input("Enter a name: ") for _ in range(5)]
 awesome_names = [f"{name} is Awesome!" for name in names]
 for awesome_name in awesome_names:
     print(awesome_name)
 
+
 #One-line List Comprehension
-names = ["Mitchell", "Bobby", "Charlie", "Elliott", "Fianna"]
-[print(f"{name} is Awesome!") for name in names]
+[print(f"{input('Enter a name: ')} is cool") for _ in range(5)]
+
