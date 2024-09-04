@@ -1,0 +1,37 @@
+sam_budget = float(input("How much does Sam have: £"))
+
+def menu():
+    print("Welcome to the Milk Bar, what can i get you?")
+    print("1. Chocolate Milkshake - £5.00")
+    print("2. Banana Milkshake - £3.00")
+    print("3. Vanilla Milkshake - £2.00")
+    print("Q. Quit and leave the bar")
+
+def get_milshake_choice():
+    return input("What milkshae would you like? (Enter 1, 2, 3, or Q to quit:)").strip().upper()
+
+milkshakes = {'1':5.00, '2':3.00, '3':2.00}
+
+while True:
+    menu()
+    sam_response = get_milshake_choice()
+
+    if sam_response in milkshakes:
+        price = milkshakes[sam_response]
+        if sam_budget >= price: 
+            print(f"\nEnjoy your milkshake!")
+            sam_budget -= price
+            print(f"Sam's remaining budget: £{sam_budget}")
+            continue
+    if sam_budget < price:
+           print("Sam doesn't have enough money. The barman throws Sam out!")
+           break
+    if sam_response == 'Q':
+        print("Sam decided to leave the bar. Goodbye!")
+        break
+    else:
+        print("Invalid Selection")
+
+        
+
+
